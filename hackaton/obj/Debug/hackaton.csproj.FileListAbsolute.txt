@@ -1,0 +1,9 @@
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.csprojResolveAssemblyReference.cache
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.Form1.resources
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.Properties.Resources.resources
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.csproj.GenerateResource.Cache
+D:\hackathon-2018.1-team40\hackaton\bin\Debug\hackaton.exe.config
+D:\hackathon-2018.1-team40\hackaton\bin\Debug\hackaton.exe
+D:\hackathon-2018.1-team40\hackaton\bin\Debug\hackaton.pdb
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.exe
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.pdb
