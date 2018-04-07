@@ -10,6 +10,8 @@ namespace hackaton
     public interface IGameObject
     {
         Bitmap Sprite { get; }
-        Point Position { get; }
+        Point Position { get; }  //центр
+        int Priority { get; }
+        int HitboxRadius { get; }
     }
 }
