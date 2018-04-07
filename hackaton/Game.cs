@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace hackaton
 {
-    public class PaintData
+    public static class Game
     {
-        Bitmap Srite;
-        Point Location;
-        int Priority;
+        static IGameObject hero;
+        static List<IGameObject> gameObjects;
     }
 }
