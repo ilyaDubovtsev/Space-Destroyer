@@ -17,3 +17,4 @@ D:\hackaton\hackaton\obj\Debug\hackaton.csproj.GenerateResource.Cache
 D:\hackaton\hackaton\obj\Debug\hackaton.csproj.CoreCompileInputs.cache
 D:\hackaton\hackaton\obj\Debug\hackaton.exe
 D:\hackaton\hackaton\obj\Debug\hackaton.pdb
+D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.csproj.CoreCompileInputs.cache

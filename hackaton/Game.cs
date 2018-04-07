@@ -20,17 +20,19 @@ namespace hackaton
         public static LinkedList<Bullet> Bullets;
         public static int Score;
 
-        public static int GameCounter = 0; 
+        public static Timer timer;
+
+        public static int GameCounter = 0;
 
         public static void Start()
         {
             Score = 0;
-            BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
-            hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
+            BackGround = (Bitmap)Image.FromFile("img\\Background.bmp");
+            hero = new Hero((Bitmap)Image.FromFile("img\\Hero.png"), new Point(200, 500));
             gameObjects = new LinkedList<IGameObject>();
             Bullets = new LinkedList<Bullet>();
+            timer.Start();
         }
-
         public static void AddBullet()
         {
             var bullet = new Bullet(hero.Position);
@@ -130,6 +132,7 @@ namespace hackaton
         {
             gameObjects = new LinkedList<IGameObject>();
             hero = new Hero((Bitmap)Image.FromFile("img\\Hero.png"), new Point(200, 300));
+            timer.Stop();
         }
     }
 }

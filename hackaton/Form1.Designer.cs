@@ -51,13 +51,12 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Score
             // 
-            this.Score.Font = new System.Drawing.Font("Poiret One", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Score.Location = new System.Drawing.Point(491, 231);
             this.Score.Name = "Score";
             this.Score.Size = new System.Drawing.Size(150, 73);
@@ -89,7 +88,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Poiret One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(428, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 73);
@@ -100,7 +99,7 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Poiret One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(428, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 73);
@@ -110,7 +109,7 @@
             // 
             // Heals
             // 
-            this.Heals.Font = new System.Drawing.Font("Poiret One", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Heals.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Heals.Location = new System.Drawing.Point(491, 158);
             this.Heals.Name = "Heals";
             this.Heals.Size = new System.Drawing.Size(163, 73);
