@@ -10,10 +10,13 @@ namespace hackaton
 {
     public static class Game
     {
-        public static Bitmap CommetSprite = (Bitmap) Image.FromFile("img\\Commet.png");
-        public static Bitmap BigCommetSprite = (Bitmap)Image.FromFile("img\\BigCommet.png");
-        public static Bitmap PlanetSprite = (Bitmap)Image.FromFile("img\\Planet.png");
+        public static Bitmap CommetSprite = (Bitmap) Image.FromFile("img\\Comet.png");
+        public static Bitmap BigCommetSprite = (Bitmap)Image.FromFile("img\\BigComet.png");
         public static Bitmap BulletSprite = (Bitmap) Image.FromFile("img\\Bullet.png");
+        public static Bitmap PlayerSprite1 = (Bitmap) Image.FromFile("img\\Player1.png");
+        public static Bitmap PlayerSprite2 = (Bitmap)Image.FromFile("img\\Player2.png");
+        public static Bitmap PlayerSprite3 = (Bitmap)Image.FromFile("img\\Player3.png");
+
         public static Bitmap BackGround;
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
@@ -26,7 +29,7 @@ namespace hackaton
         {
             Score = 0;
             BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
-            hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
+            hero = new Hero(PlayerSprite1, new Point(200, 500));
             gameObjects = new LinkedList<IGameObject>();
             Bullets = new LinkedList<Bullet>();
         }
@@ -50,9 +53,6 @@ namespace hackaton
                 case 1:
                     gameObjects.AddLast(new BigCommet(new Point(xRandom, -150)));
                     break;
-                //case 2:
-                //    gameObjects.AddLast(new Planet(new Point(r.Next(0, 1) == 1 ? 0 : 400, -150)));
-                //    break;
             }
         }
 
@@ -68,8 +68,8 @@ namespace hackaton
                 {
                     forClering.Add(gameObject);
                     hero.Heals -= gameObject.Damage;
-                    if (hero.Heals <= 0)
-                        GameOver();
+                    //if (hero.Heals <= 0)
+                    //    GameOver();
                 }
                 if (!(gameObject is Bullet))
                 {
@@ -87,6 +87,8 @@ namespace hackaton
                         }
                     }
                 }
+                if (hero.Heals <= 0)
+                    GameOver();
             }
 
             foreach (var gameObject in forClering)

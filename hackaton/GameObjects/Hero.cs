@@ -9,7 +9,7 @@ namespace hackaton
 {
     public class Hero : IGameObject
     {
-        public Bitmap Sprite { get; }
+        public Bitmap Sprite { get; private set; }
         public Point Position { get; private set; }
         public int Priority => 100;
         public int HitboxRadius { get; }
@@ -38,5 +38,23 @@ namespace hackaton
                 newX = 400;
             Position = new Point(newX, Position.Y);
         }
+
+        public void ChangeSprite()
+        {
+            switch (Game.GameCounter % 3)
+            {
+                case 0:
+                    Sprite = Game.PlayerSprite1;
+                    break;
+                case 1:
+                    Sprite = Game.PlayerSprite2;
+                    break;
+                case 2:
+                    Sprite = Game.PlayerSprite3;
+                    break;
+            }
+        }
+
+  
     }
 }

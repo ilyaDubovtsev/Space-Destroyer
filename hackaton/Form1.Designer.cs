@@ -96,16 +96,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Score";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Poiret One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(428, 158);
+            this.label4.Location = new System.Drawing.Point(418, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 73);
+            this.label4.Size = new System.Drawing.Size(67, 73);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Heals";
+            this.label4.Text = "Health";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Heals
