@@ -32,7 +32,15 @@ namespace hackaton
                         var x = location.X + i;
                         var y = location.Y + j;
                         if (x > 0 & y > 0 & x < width & y < heigth)
-                            result.SetPixel(x, y, obj.Sprite.GetPixel(i, j));
+                        {
+                            var newPixel = obj.Sprite.GetPixel(i, j);
+                            var oldPixel = result.GetPixel(x, y);
+                            int resR = (int)(newPixel.A*newPixel.R + oldPixel.R * (255 - newPixel.A))/255;
+                            int resG = (int)(newPixel.A * newPixel.G + oldPixel.G * (255 - newPixel.A)) / 255;
+                            int resB = (int)(newPixel.A * newPixel.B + oldPixel.B * (255 - newPixel.A)) / 255;
+                            var resultPixel = Color.FromArgb(255, resR, resG, resB);
+                                result.SetPixel(x, y, resultPixel);
+                        }
                     }
             }
             return result;

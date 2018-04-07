@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace hackaton
 {
-    class Hero : IGameObject
+    public class Hero : IGameObject
     {
         public Bitmap Sprite { get; }
         public Point Position { get; private set; }
@@ -28,6 +28,11 @@ namespace hackaton
             this.HitboxRadius = hitboxRadius;
             this.Heals = 100;
 
+        }
+
+        public void Move(int delta)
+        {
+            Position = new Point(Position.X + delta, Position.Y);
         }
     }
 }
