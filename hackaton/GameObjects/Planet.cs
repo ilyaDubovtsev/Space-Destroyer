@@ -19,7 +19,7 @@ namespace hackaton
             get => 1000;
             set { }
         }
-        public int Damage => 1000;
+        public int Damage => 10;
         public void SetNewPosition()
         {
             Position = new Point(Position.X, Position.Y + Speed);
@@ -29,7 +29,7 @@ namespace hackaton
         {
             this.Sprite = sprite;
             this.Position = startPosition;
-            this.HitboxRadius = 150;
+            this.HitboxRadius = 32;
         }
     }
 }

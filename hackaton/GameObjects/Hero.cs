@@ -25,9 +25,8 @@ namespace hackaton
         {
             this.Sprite = sprite;
             this.Position = startPosition;
-            this.HitboxRadius = 64;
+            this.HitboxRadius = 32;
             this.Heals = 100;
-
         }
 
         public void Move(int delta)

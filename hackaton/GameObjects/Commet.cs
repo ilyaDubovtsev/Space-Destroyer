@@ -15,7 +15,7 @@ namespace hackaton
         public int HitboxRadius { get; }
         public int Speed => 5;
         public int Heals { get; set; }
-        public int Damage => 25;
+        public int Damage => 5;
 
         public void SetNewPosition()
         {

@@ -15,7 +15,7 @@ namespace hackaton
         public int HitboxRadius { get; }
         public int Speed => 5;
         public int Heals { get; set; }
-        public int Damage  => 50;
+        public int Damage  => 5;
 
         public void SetNewPosition()
         {
@@ -26,7 +26,7 @@ namespace hackaton
         {
             this.Sprite = sprite;
             this.Position = startPosition;
-            this.HitboxRadius = 64;
+            this.HitboxRadius = 32;
             this.Heals = 30;
         }
     }
