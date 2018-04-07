@@ -26,8 +26,6 @@ namespace hackaton
                 gameObject.SetNewPosition();
                 PositionCheck(gameObject);
             }
-
-
         }
 
         private static bool PositionCheck(IGameObject gemeObject)
@@ -35,5 +33,11 @@ namespace hackaton
             throw new NotImplementedException();
         }
 
+        public static IEnumerable<IGameObject> ReturnAllObjects()
+        {
+            var result = gameObjects.ToList();
+            result.Add(hero);
+            return result;
+        }
     }
 }
