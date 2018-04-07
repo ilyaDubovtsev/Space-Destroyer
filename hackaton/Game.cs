@@ -16,7 +16,7 @@ namespace hackaton
         public static void Start()
         {
            BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
-            hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500), 50);
+            hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 530), 50);
             gameObjects = new LinkedList<IGameObject>();
         }
 
