@@ -7,3 +7,13 @@ D:\hackathon-2018.1-team40\hackaton\bin\Debug\hackaton.exe
 D:\hackathon-2018.1-team40\hackaton\bin\Debug\hackaton.pdb
 D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.exe
 D:\hackathon-2018.1-team40\hackaton\obj\Debug\hackaton.pdb
+D:\hackaton\hackaton\bin\Debug\hackaton.exe.config
+D:\hackaton\hackaton\bin\Debug\hackaton.exe
+D:\hackaton\hackaton\bin\Debug\hackaton.pdb
+D:\hackaton\hackaton\obj\Debug\hackaton.csprojResolveAssemblyReference.cache
+D:\hackaton\hackaton\obj\Debug\hackaton.Form1.resources
+D:\hackaton\hackaton\obj\Debug\hackaton.Properties.Resources.resources
+D:\hackaton\hackaton\obj\Debug\hackaton.csproj.GenerateResource.Cache
+D:\hackaton\hackaton\obj\Debug\hackaton.csproj.CoreCompileInputs.cache
+D:\hackaton\hackaton\obj\Debug\hackaton.exe
+D:\hackaton\hackaton\obj\Debug\hackaton.pdb

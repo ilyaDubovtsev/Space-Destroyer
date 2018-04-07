@@ -52,7 +52,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
-    <Compile Include="IGameObject.cs" />
+    <Compile Include="GameObjects\BigCommet.cs" />
+    <Compile Include="GameObjects\Commet.cs" />
+    <Compile Include="GameObjects\Hero.cs" />
+    <Compile Include="GameObjects\IGameObject.cs" />
+    <Compile Include="GameObjects\Planet.cs" />
     <Compile Include="Painter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

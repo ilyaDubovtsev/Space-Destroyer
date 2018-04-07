@@ -12,7 +12,5 @@ namespace hackaton
         public static Bitmap BackGround;
         static Hero hero;
         static List<IGameObject> gameObjects;
-
-        
     }
 }
