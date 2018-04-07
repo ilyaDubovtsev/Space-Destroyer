@@ -43,6 +43,8 @@ namespace hackaton
                 Game.AddBullet();
             Game.hero.Move(delta);
             pictureBox1.Image = painter.Paint(Game.ReturnAllObjects());
+            Score.Text = Game.Score.ToString();
+            Heals.Text = Game.hero.Heals.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,6 +52,7 @@ namespace hackaton
             Game.Start();
             music.PlayLooping();
             painter = new Painter(pictureBox1, Game.BackGround);
+            Heals.Text = Game.hero.Heals.ToString();
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -66,6 +69,11 @@ namespace hackaton
                 left = true;
             if (e.KeyCode == Keys.Right)
                 right = true;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

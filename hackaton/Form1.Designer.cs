@@ -34,6 +34,9 @@
             this.Score = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Heals = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,10 +57,10 @@
             // 
             // Score
             // 
-            this.Score.Font = new System.Drawing.Font("Magneto", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Score.Location = new System.Drawing.Point(418, 164);
+            this.Score.Font = new System.Drawing.Font("Poiret One", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Score.Location = new System.Drawing.Point(491, 231);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(217, 73);
+            this.Score.Size = new System.Drawing.Size(150, 73);
             this.Score.TabIndex = 1;
             this.Score.Text = "0";
             this.Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,11 +87,45 @@
             this.label3.Text = "The Space";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Poiret One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(428, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 73);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Score";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Poiret One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(428, 158);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 73);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Heals";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Heals
+            // 
+            this.Heals.Font = new System.Drawing.Font("Poiret One", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Heals.Location = new System.Drawing.Point(491, 158);
+            this.Heals.Name = "Heals";
+            this.Heals.Size = new System.Drawing.Size(163, 73);
+            this.Heals.TabIndex = 5;
+            this.Heals.Text = "100";
+            this.Heals.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 624);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Heals);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Score);
@@ -115,6 +152,9 @@
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Heals;
     }
 }
 

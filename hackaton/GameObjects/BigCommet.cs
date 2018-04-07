@@ -16,7 +16,7 @@ namespace hackaton
         public int HitboxRadius { get; }
         public int Speed => 4;
         public int Heals { get; set; }
-        public int Damage  => 5;
+        public int Damage  => 20;
 
         public void SetNewPosition()
         {
@@ -26,7 +26,7 @@ namespace hackaton
         public BigCommet(Point startPosition)
         {
             this.Position = startPosition;
-            this.HitboxRadius = 32;
+            this.HitboxRadius = 14;
             this.Heals = 50;
         }
     }

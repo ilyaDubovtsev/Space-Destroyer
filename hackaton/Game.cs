@@ -18,12 +18,13 @@ namespace hackaton
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
         public static LinkedList<Bullet> Bullets;
-        
+        public static int Score;
 
         public static int GameCounter = 0; 
 
         public static void Start()
         {
+            Score = 0;
             BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
             hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
             gameObjects = new LinkedList<IGameObject>();
@@ -78,7 +79,10 @@ namespace hackaton
                         {
                             gameObject.Heals -= bullet.Damage;
                             if (gameObject.Heals <= 0)
+                            {
+                                Score++;
                                 forClering.Add(gameObject);
+                            }
                             forClering.Add(bullet);
                         }
                     }
