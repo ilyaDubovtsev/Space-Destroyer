@@ -54,6 +54,7 @@ namespace hackaton
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Game.timer = timer1;
             Game.Start();
             music.PlayLooping();
             painter = new Painter(pictureBox1, Game.BackGround);
