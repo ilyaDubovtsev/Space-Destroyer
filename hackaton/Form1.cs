@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading.Tasks;
 
 namespace hackaton
 {
     public partial class Form1 : Form
     {
-        SoundPlayer music = new SoundPlayer("sound\\Music.wav");
         bool left;
         bool right;
         int delta = 0;
@@ -48,7 +48,7 @@ namespace hackaton
         {
             Game.timer = timer1;
             Game.Start();
-            music.PlayLooping();
+            Task.Run(() => Game.music.PlayLooping());
             painter = new Painter(pictureBox1, Game.BackGround);
             Heals.Text = Game.hero.Heals.ToString();
         }

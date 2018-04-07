@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Media;
 
 namespace hackaton
 {
@@ -25,6 +26,10 @@ namespace hackaton
         public static int Score;
 
         public static Timer timer;
+
+        static SoundPlayer hitSound = new SoundPlayer("sound\\Hit.wav");
+        static SoundPlayer crushSound = new SoundPlayer("sound\\Crush.wav");
+        public static SoundPlayer music = new SoundPlayer("sound\\Music.wav");
 
         public static int GameCounter = 0;
 
