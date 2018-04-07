@@ -16,6 +16,6 @@ namespace hackaton
         int Speed { get; } // пикселей за тик
         int Heals { get; set; }
         int Damage { get; }
-
+        void SetNewPosition();
     }
 }

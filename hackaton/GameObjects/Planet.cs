@@ -20,6 +20,10 @@ namespace hackaton
             set { }
         }
         public int Damage => 1000;
+        public void SetNewPosition()
+        {
+            throw new NotImplementedException();
+        }
 
         public Planet(Bitmap sprite, Point startPosition, int hitboxRadius)
         {

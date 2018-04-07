@@ -16,6 +16,10 @@ namespace hackaton
         public int Speed => 0;
         public int Heals { get; set; }
         public int Damage => 0;
+        public void SetNewPosition()
+        {
+            throw new NotImplementedException();
+        }
 
         public Hero(Bitmap sprite, Point startPosition, int hitboxRadius)
         {

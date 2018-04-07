@@ -16,6 +16,11 @@ namespace hackaton
         public int Speed => 20;
         public int Heals { get; set; }
         public int Damage  => 50;
+        public void SetNewPosition()
+        {
+            throw new NotImplementedException();
+        }
+
         public BigCommet(Bitmap sprite, Point startPosition, int hitboxRadius)
         {
             this.Sprite = sprite;

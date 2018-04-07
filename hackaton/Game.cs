@@ -10,7 +10,30 @@ namespace hackaton
     public static class Game
     {
         public static Bitmap BackGround;
-        static Hero hero;
-        static List<IGameObject> gameObjects;
+        private static Hero hero;
+        static LinkedList<IGameObject> gameObjects;
+
+        public static void Start()
+        {
+            //Bitmap = new Bitmap();
+            //hero = new Hero(Bitmap.FromFile(), new Point(200, 500), 50);
+        }
+
+        public static void Update()
+        {
+            foreach (var gameObject in gameObjects)
+            {
+                gameObject.SetNewPosition();
+                PositionCheck(gameObject);
+            }
+
+
+        }
+
+        private static bool PositionCheck(IGameObject gemeObject)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
