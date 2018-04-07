@@ -11,7 +11,7 @@ namespace hackaton
     {
         public static Bitmap BackGround;
         private static Hero hero;
-        static LinkedList<IGameObject> GameObjects;
+        static LinkedList<IGameObject> gameObjects;
 
         public static void Start()
         {
@@ -21,7 +21,7 @@ namespace hackaton
 
         public static void Update()
         {
-            foreach (var gameObject in GameObjects)
+            foreach (var gameObject in gameObjects)
             {
                 gameObject.SetNewPosition();
                 PositionCheck(gameObject);
@@ -30,7 +30,7 @@ namespace hackaton
 
         private static void PositionCheck(IGameObject gameObject)
         {
-            if (gameObject.Position.Y > 650) GameObjects.Remove(gameObject);
+            if (gameObject.Position.Y > 650) gameObjects.Remove(gameObject);
         }
 
         public static IEnumerable<IGameObject> ReturnAllObjects()
