@@ -9,16 +9,27 @@ namespace hackaton
 {
     class Bullet : IGameObject
     {
-        public Bitmap Sprite { get; }
-        public Point Position { get; }
+        public Bitmap Sprite => (Bitmap) Image.FromFile("img\\Bullet.png");
+        public Point Position { get; private set; }
         public int Priority { get; }
-        public int HitboxRadius { get; }
-        public int Speed { get; }
-        public int Heals { get; set; }
-        public int Damage { get; }
+        public int HitboxRadius => 1;
+        public int Speed => -10;
+        public int Heals
+        {
+            get => 100;
+            set {}
+        }
+
+        public int Damage => 5;
+
         public void SetNewPosition()
         {
-            throw new NotImplementedException();
+            Position = new Point(Position.X, Position.Y + Speed);
+        }
+
+        public Bullet(Point startPosition)
+        {
+            this.Position = startPosition;
         }
     }
 }

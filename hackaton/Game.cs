@@ -14,11 +14,9 @@ namespace hackaton
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
         public static int GameCounter = 0; //TODO: дописать добавление обжэкта по каунтеру
-        private static bool isEnded;
 
         public static void Start()
         {
-            isEnded = false;
             BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
             hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
             gameObjects = new LinkedList<IGameObject>();
@@ -31,45 +29,41 @@ namespace hackaton
             switch (r.Next(0, 100) % 3)
             {
                 case 0:
-                    gameObjects.AddLast(new Commet((Bitmap)Image.FromFile("img\\Commet.png"),
+                    gameObjects.AddLast(new Commet((Bitmap)Image.FromFile("img\\Commet.png"), 
                         new Point(xRandom, -150)));
                     break;
                 case 1:
-                    gameObjects.AddLast(new BigCommet((Bitmap)Image.FromFile("img\\Commet.png"),
+                    gameObjects.AddLast(new BigCommet((Bitmap)Image.FromFile("img\\Commet.png"), 
                         new Point(xRandom, -150)));
                     break;
-                //case 2:
-                //    gameObjects.AddLast(new Planet((Bitmap)Image.FromFile("img\\Commet.png"),
-                //        new Point(xRandom, -150)));
-                //    break;
+                case 2:
+                    gameObjects.AddLast(new Planet((Bitmap)Image.FromFile("img\\Commet.png"), 
+                        new Point(r.Next(0, 1) == 1 ? 0 : 400, -150)));
+                    break;
             }
         }
 
         public static void Update()
         {
-            if (!isEnded)
+            var forClering = new List<IGameObject>();
+            foreach (var gameObject in gameObjects)
             {
-                var forClering = new List<IGameObject>();
-                foreach (var gameObject in gameObjects)
+                gameObject.SetNewPosition();
+                if (PositionCheck(gameObject))
+                    forClering.Add(gameObject);
+                if (IsBumpToHero(gameObject))
                 {
-                    gameObject.SetNewPosition();
-                    if (PositionCheck(gameObject))
-                        forClering.Add(gameObject);
-                    if (IsBumpToHero(gameObject))
-                    {
-                        forClering.Add(gameObject);
-                        hero.Heals -= gameObject.Damage;
-                        if (hero.Heals <= 0)
-                            GameOver();
-                    }
-                }
-
-                foreach (var gameObject in forClering)
-                {
-                    gameObjects.Remove(gameObject);
+                    forClering.Add(gameObject);
+                    hero.Heals -= gameObject.Damage;
+                    if (hero.Heals <= 0)
+                        GameOver();
                 }
             }
 
+            foreach (var gameObject in forClering)
+            {
+                gameObjects.Remove(gameObject);
+            }
         }
 
         public static IEnumerable<IGameObject> ReturnAllObjects()
@@ -96,7 +90,6 @@ namespace hackaton
         {
             gameObjects = new LinkedList<IGameObject>();
             hero = new Hero((Bitmap)Image.FromFile("img\\Hero.png"), new Point(200, 300));
-            isEnded = true;
         }
     }
 }
