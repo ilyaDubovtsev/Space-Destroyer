@@ -10,7 +10,7 @@ namespace hackaton
     class Hero : IGameObject
     {
         public Bitmap Sprite { get; }
-        public Point Position { get; }
+        public Point Position { get; private set; }
         public int Priority => 100;
         public int HitboxRadius { get; }
         public int Speed => 0;
@@ -18,7 +18,7 @@ namespace hackaton
         public int Damage => 0;
         public void SetNewPosition()
         {
-            throw new NotImplementedException();
+            Position = new Point(Position.X, Position.Y + Speed);
         }
 
         public Hero(Bitmap sprite, Point startPosition, int hitboxRadius)

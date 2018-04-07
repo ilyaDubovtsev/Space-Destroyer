@@ -10,7 +10,7 @@ namespace hackaton
     public interface IGameObject
     {
         Bitmap Sprite { get; }
-        Point Position { get; }  //центр
+        Point Position { get;}  //центр
         int Priority { get; } //приоритет рисования от 0
         int HitboxRadius { get; }
         int Speed { get; } // пикселей за тик

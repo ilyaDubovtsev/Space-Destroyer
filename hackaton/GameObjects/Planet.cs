@@ -10,7 +10,7 @@ namespace hackaton
     class Planet : IGameObject
     {
         public Bitmap Sprite { get; }
-        public Point Position { get; }
+        public Point Position { get; private set; }
         public int Priority => 1;
         public int HitboxRadius { get; }
         public int Speed => 10;
@@ -22,7 +22,7 @@ namespace hackaton
         public int Damage => 1000;
         public void SetNewPosition()
         {
-            throw new NotImplementedException();
+            Position = new Point(Position.X, Position.Y + Speed);
         }
 
         public Planet(Bitmap sprite, Point startPosition, int hitboxRadius)

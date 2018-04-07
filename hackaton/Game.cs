@@ -11,28 +11,26 @@ namespace hackaton
     {
         public static Bitmap BackGround;
         private static Hero hero;
-        static LinkedList<IGameObject> gameObjects;
+        static LinkedList<IGameObject> GameObjects;
 
         public static void Start()
         {
-            //Bitmap = new Bitmap();
-            //hero = new Hero(Bitmap.FromFile(), new Point(200, 500), 50);
+            BackGround = (Bitmap) Image.FromFile("\\assets\\img\\Hero.png");
+            hero = new Hero((Bitmap) Image.FromFile("\\assets\\img\\Background.bmp"), new Point(200, 500), 50);
         }
 
         public static void Update()
         {
-            foreach (var gameObject in gameObjects)
+            foreach (var gameObject in GameObjects)
             {
                 gameObject.SetNewPosition();
                 PositionCheck(gameObject);
             }
-
-
         }
 
-        private static bool PositionCheck(IGameObject gemeObject)
+        private static void PositionCheck(IGameObject gameObject)
         {
-            throw new NotImplementedException();
+            if (gameObject.Position.Y > 650) GameObjects.Remove(gameObject);
         }
 
     }

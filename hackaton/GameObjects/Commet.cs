@@ -10,15 +10,16 @@ namespace hackaton
     class Commet : IGameObject
     {
         public Bitmap Sprite { get; }
-        public Point Position { get; }
+        public Point Position { get; private set; }
         public int Priority => 3;
         public int HitboxRadius { get; }
         public int Speed => 10;
         public int Heals { get; set; }
         public int Damage => 25;
+
         public void SetNewPosition()
         {
-            throw new NotImplementedException();
+            Position = new Point(Position.X, Position.Y + Speed);
         }
 
         public Commet(Bitmap sprite, Point startPosition, int hitboxRadius)
