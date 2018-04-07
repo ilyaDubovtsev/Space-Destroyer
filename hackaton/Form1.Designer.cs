@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Heals = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,10 +57,11 @@
             // 
             // Score
             // 
-            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Score.Location = new System.Drawing.Point(491, 231);
+            this.Score.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Score.ForeColor = System.Drawing.Color.White;
+            this.Score.Location = new System.Drawing.Point(517, 231);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(150, 73);
+            this.Score.Size = new System.Drawing.Size(126, 73);
             this.Score.TabIndex = 1;
             this.Score.Text = "0";
             this.Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,6 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Magneto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(430, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 41);
@@ -79,6 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Magneto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(430, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 41);
@@ -88,44 +92,60 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(428, 231);
+            this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(431, 231);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 73);
+            this.label1.Size = new System.Drawing.Size(67, 73);
             this.label1.TabIndex = 4;
             this.label1.Text = "Score";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-<<<<<<< HEAD
-            this.label4.Font = new System.Drawing.Font("Poiret One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(418, 158);
-=======
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(428, 158);
->>>>>>> 2a431d7079b6a57349fde5912cfc5bf1308254bb
+            this.label4.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(426, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 73);
+            this.label4.Size = new System.Drawing.Size(77, 73);
             this.label4.TabIndex = 6;
             this.label4.Text = "Health";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Heals
             // 
-            this.Heals.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Heals.Location = new System.Drawing.Point(491, 158);
+            this.Heals.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Heals.ForeColor = System.Drawing.Color.White;
+            this.Heals.Location = new System.Drawing.Point(504, 158);
             this.Heals.Name = "Heals";
-            this.Heals.Size = new System.Drawing.Size(163, 73);
+            this.Heals.Size = new System.Drawing.Size(150, 73);
             this.Heals.TabIndex = 5;
             this.Heals.Text = "100";
             this.Heals.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(428, 517);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 92);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "New Game";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.button1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(647, 624);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Heals);
             this.Controls.Add(this.label1);
@@ -158,6 +178,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Heals;
+        private System.Windows.Forms.Button button1;
     }
 }
 

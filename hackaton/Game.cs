@@ -30,13 +30,8 @@ namespace hackaton
         public static void Start()
         {
             Score = 0;
-<<<<<<< HEAD
             BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
             hero = new Hero(PlayerSprite1, new Point(200, 500));
-=======
-            BackGround = (Bitmap)Image.FromFile("img\\Background.bmp");
-            hero = new Hero((Bitmap)Image.FromFile("img\\Hero.png"), new Point(200, 500));
->>>>>>> 2a431d7079b6a57349fde5912cfc5bf1308254bb
             gameObjects = new LinkedList<IGameObject>();
             Bullets = new LinkedList<Bullet>();
             timer.Start();
