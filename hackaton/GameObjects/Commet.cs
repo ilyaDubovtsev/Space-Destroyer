@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace hackaton
 {
-    class Commet : IGameObject
+    public class Commet : IGameObject
     {
         //private static Bitmap _sprite = (Bitmap) Image.FromFile("img\\Commet.png");
         public Bitmap Sprite => Game.CommetSprite;
@@ -27,7 +27,7 @@ namespace hackaton
         {
             this.Position = startPosition;
             this.HitboxRadius = 28;
-            this.Heals = 20;
+            this.Heals = 40;
         }
     }
 }

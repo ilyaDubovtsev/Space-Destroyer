@@ -17,7 +17,7 @@ namespace hackaton
         public static Bitmap BackGround;
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
-        public static LinkedList<IGameObject> Bullets;
+        public static LinkedList<Bullet> Bullets;
 
         public static int GameCounter = 0; 
 
@@ -26,7 +26,7 @@ namespace hackaton
             BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
             hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
             gameObjects = new LinkedList<IGameObject>();
-            Bullets = new LinkedList<IGameObject>();
+            Bullets = new LinkedList<Bullet>();
         }
 
         public static void AddBullet()
@@ -40,7 +40,7 @@ namespace hackaton
         {
             var r = new Random();
             var xRandom = r.Next(0, 400);
-            switch (r.Next(0, 100) % 3)
+            switch (r.Next(0, 100) % 2)
             {
                 case 0:
                     gameObjects.AddLast(new Commet(new Point(xRandom, -150)));
@@ -69,11 +69,26 @@ namespace hackaton
                     if (hero.Heals <= 0)
                         GameOver();
                 }
+                if (!(gameObject is Bullet))
+                {
+                    foreach (var bullet in Bullets)
+                    {
+                        if (IsShooted(bullet, gameObject))
+                        {
+                            gameObject.Heals -= bullet.Damage;
+                            if (gameObject.Heals <= 0)
+                                forClering.Add(gameObject);
+                            forClering.Add(bullet);
+                        }
+                    }
+                }
             }
 
             foreach (var gameObject in forClering)
             {
                 gameObjects.Remove(gameObject);
+                if (gameObject is Bullet)
+                    Bullets.Remove(gameObject as Bullet);
             }
         }
 
@@ -96,6 +111,14 @@ namespace hackaton
             var deltaY = hero.Position.Y - ob.Position.Y;
             var distance = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
             return distance < ob.HitboxRadius + hero.HitboxRadius;
+        }
+
+        private static bool IsShooted(Bullet bullet, IGameObject gameObject)
+        {
+            var deltaX = bullet.Position.X - gameObject.Position.X;
+            var deltaY = bullet.Position.Y - gameObject.Position.Y;
+            var distance = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+            return distance < gameObject.HitboxRadius + 1;
         }
 
         public static void GameOver()

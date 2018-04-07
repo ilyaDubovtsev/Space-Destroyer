@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace hackaton
 {
-    class Bullet : IGameObject
+    public class Bullet : IGameObject
     {
         public Bitmap Sprite => Game.BulletSprite;
         public Point Position { get; private set; }
@@ -20,7 +20,7 @@ namespace hackaton
             set {}
         }
 
-        public int Damage => 5;
+        public int Damage => 7;
 
         public void SetNewPosition()
         {

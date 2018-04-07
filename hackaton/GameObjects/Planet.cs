@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace hackaton
 {
-    class Planet : IGameObject
+    public class Planet : IGameObject
     {
         //private static Bitmap _sprite = (Bitmap) Image.FromFile("img\\Commet.png");
         public Bitmap Sprite => Game.PlanetSprite;
