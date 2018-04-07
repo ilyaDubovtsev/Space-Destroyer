@@ -21,7 +21,7 @@ namespace hackaton
         private void timer1_Tick(object sender, EventArgs e)
         {
             Game.Update();
-            pictureBox1.Image = painter.Paint(Game.gameObjects, Game.hero);
+            pictureBox1.Image = painter.Paint(Game.ReturnAllObjects());
         }
 
         private void Form1_Load(object sender, EventArgs e)
