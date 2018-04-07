@@ -131,7 +131,7 @@ namespace hackaton
         public static void GameOver()
         {
             gameObjects = new LinkedList<IGameObject>();
-            hero = new Hero((Bitmap)Image.FromFile("img\\Hero.png"), new Point(200, 300));
+            hero = new Hero((Bitmap)Image.FromFile("img\\GameOver.png"), new Point(200, 300));
             timer.Stop();
         }
     }
