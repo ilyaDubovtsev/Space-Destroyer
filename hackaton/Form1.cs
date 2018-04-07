@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,13 @@ namespace hackaton
         private void timer1_Tick(object sender, EventArgs e)
         {
             Game.Update();
+            Game.GameCounter++;
+            if (Game.GameCounter == 20)
+            {
+                Game.GameCounter = 0;
+                Game.AddObject();
+            }
+            //Game.AddObject();
             pictureBox1.Image = painter.Paint(Game.gameObjects, Game.hero);
         }
 

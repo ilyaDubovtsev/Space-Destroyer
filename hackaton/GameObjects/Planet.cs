@@ -13,7 +13,7 @@ namespace hackaton
         public Point Position { get; private set; }
         public int Priority => 1;
         public int HitboxRadius { get; }
-        public int Speed => 10;
+        public int Speed => 5;
         public int Heals
         {
             get => 1000;
@@ -25,11 +25,11 @@ namespace hackaton
             Position = new Point(Position.X, Position.Y + Speed);
         }
 
-        public Planet(Bitmap sprite, Point startPosition, int hitboxRadius)
+        public Planet(Bitmap sprite, Point startPosition)
         {
             this.Sprite = sprite;
             this.Position = startPosition;
-            this.HitboxRadius = hitboxRadius;
+            this.HitboxRadius = 150;
         }
     }
 }

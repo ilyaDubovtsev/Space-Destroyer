@@ -21,11 +21,11 @@ namespace hackaton
             Position = new Point(Position.X, Position.Y + Speed);
         }
 
-        public Hero(Bitmap sprite, Point startPosition, int hitboxRadius)
+        public Hero(Bitmap sprite, Point startPosition)
         {
             this.Sprite = sprite;
             this.Position = startPosition;
-            this.HitboxRadius = hitboxRadius;
+            this.HitboxRadius = 64;
             this.Heals = 100;
 
         }

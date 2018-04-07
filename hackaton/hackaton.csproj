@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="GameObjects\BigCommet.cs" />
+    <Compile Include="GameObjects\Bullet.cs" />
     <Compile Include="GameObjects\Commet.cs" />
     <Compile Include="GameObjects\Hero.cs" />
     <Compile Include="GameObjects\IGameObject.cs" />
@@ -88,6 +89,7 @@
   <ItemGroup>
     <Content Include="assets\img\Background.bmp" />
     <Content Include="assets\img\Hero.png" />
+    <Content Include="assets\img\Comment.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
