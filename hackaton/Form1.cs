@@ -39,7 +39,6 @@ namespace hackaton
                 Game.GameCounter = 0;
                 Game.AddObject();
             }
-            //Game.AddObject();
             Game.hero.Move(delta);
             pictureBox1.Image = painter.Paint(Game.ReturnAllObjects());
         }

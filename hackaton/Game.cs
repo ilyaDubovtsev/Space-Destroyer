@@ -28,16 +28,16 @@ namespace hackaton
             switch (r.Next(0, 100) % 3)
             {
                 case 0:
-                    gameObjects.AddLast(new Commet((Bitmap) Image.FromFile("img\\Commet.png"),
-                        new Point(50, -150)));
+                    gameObjects.AddLast(new Commet((Bitmap)Image.FromFile("img\\Commet.png"),
+                        new Point(xRandom, -150)));
                     break;
                 case 1:
-                    gameObjects.AddLast(new BigCommet((Bitmap) Image.FromFile("img\\Commet.png"),
-                        new Point(150, -150)));
+                    gameObjects.AddLast(new BigCommet((Bitmap)Image.FromFile("img\\Commet.png"),
+                        new Point(xRandom, -150)));
                     break;
                 case 2:
-                    gameObjects.AddLast(new Planet((Bitmap) Image.FromFile("img\\Commet.png"),
-                        new Point(200, -150)));
+                    gameObjects.AddLast(new Planet((Bitmap)Image.FromFile("img\\Commet.png"),
+                        new Point(xRandom, -150)));
                     break;
             }
         }

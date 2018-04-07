@@ -25,7 +25,7 @@ namespace hackaton
         public BigCommet(Bitmap sprite, Point startPosition)
         {
             this.Sprite = sprite;
-            this.Position = Position;
+            this.Position = startPosition;
             this.HitboxRadius = 64;
             this.Heals = 30;
         }
