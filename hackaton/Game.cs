@@ -18,6 +18,7 @@ namespace hackaton
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
         public static LinkedList<Bullet> Bullets;
+        
 
         public static int GameCounter = 0; 
 
