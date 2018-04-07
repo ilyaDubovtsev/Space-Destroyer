@@ -16,12 +16,8 @@ namespace hackaton
 
         public static void Start()
         {
-           BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
-<<<<<<< HEAD
+            BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
             hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
-=======
-            hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 530), 50);
->>>>>>> 36ac07349bec81d909d44648deeafaf3a8df64e3
             gameObjects = new LinkedList<IGameObject>();
         }
 
@@ -29,29 +25,36 @@ namespace hackaton
         {
             var r = new Random();
             var xRandom = r.Next(0, 400);
-            switch (r.Next(0, 2))
+            switch (r.Next(0, 100) % 3)
             {
                 case 0:
                     gameObjects.AddLast(new Commet((Bitmap) Image.FromFile("img\\Commet.png"),
-                        new Point(xRandom, -30)));
+                        new Point(50, -150)));
                     break;
                 case 1:
                     gameObjects.AddLast(new BigCommet((Bitmap) Image.FromFile("img\\Commet.png"),
-                        new Point(xRandom, -60)));
+                        new Point(150, -150)));
                     break;
                 case 2:
                     gameObjects.AddLast(new Planet((Bitmap) Image.FromFile("img\\Commet.png"),
-                        new Point(xRandom, -150)));
+                        new Point(200, -150)));
                     break;
             }
         }
 
         public static void Update()
         {
+            var forClering = new List<IGameObject>();
             foreach (var gameObject in gameObjects)
             {
                 gameObject.SetNewPosition();
-                PositionCheck(gameObject);
+                if (PositionCheck(gameObject)) 
+                    forClering.Add(gameObject);
+            }
+
+            foreach (var gameObject in forClering)
+            {
+                gameObjects.Remove(gameObject);
             }
         }
 
@@ -62,11 +65,9 @@ namespace hackaton
             return result;
         }
 
-        private static void PositionCheck(IGameObject gameObject)
+        private static bool PositionCheck(IGameObject gameObject)
         {
-            if (gameObject.Position.Y > 650 || gameObject is Bullet && gameObject.Position.Y < -10)
-                gameObjects.Remove(gameObject);
-
+            return (gameObject.Position.Y > 650 || gameObject is Bullet && gameObject.Position.Y < -10);
         }
     }
 }
