@@ -24,6 +24,7 @@ namespace hackaton
         public static LinkedList<IGameObject> gameObjects;
         public static LinkedList<Bullet> Bullets;
         public static int Score;
+        private static Random r = new Random();
 
         static SoundPlayer hit = new SoundPlayer("Sound.wav");
 
@@ -53,14 +54,16 @@ namespace hackaton
 
         public static void AddObject()
         {
-            var r = new Random();
             var xRandom = r.Next(0, 400);
-            switch (r.Next(0, 100) % 2)
+            switch (r.Next() % 3)
             {
                 case 0:
                     gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
                     break;
                 case 1:
+                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
+                    break;
+                case 2:
                     gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
                     break;
             }

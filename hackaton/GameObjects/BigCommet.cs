@@ -9,7 +9,6 @@ namespace hackaton
 {
     public class BigCommet : IGameObject
     {
-        //private static Bitmap _sprite = (Bitmap) Image.FromFile("img\\Commet.png");
         public Bitmap Sprite => Game.BigCommetSprite;
         public Point Position { get; private set; }
         public int Priority => 2;

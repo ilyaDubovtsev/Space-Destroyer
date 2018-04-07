@@ -28,8 +28,8 @@ namespace hackaton
             Game.GameCounter++;
             if (Game.GameCounter == 50)
             {
-                Game.GameCounter = 0;
                 Game.AddObject();
+                Game.GameCounter = 0;
             }
 
             if (Game.GameCounter % 5 == 0)
