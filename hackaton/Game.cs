@@ -33,5 +33,11 @@ namespace hackaton
             if (gameObject.Position.Y > 650) GameObjects.Remove(gameObject);
         }
 
+        public static IEnumerable<IGameObject> ReturnAllObjects()
+        {
+            var result = gameObjects.ToList();
+            result.Add(hero);
+            return result;
+        }
     }
 }
