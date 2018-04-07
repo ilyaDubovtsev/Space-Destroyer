@@ -12,6 +12,7 @@ namespace hackaton
     {
         public static Bitmap CommetSprite = (Bitmap) Image.FromFile("img\\Comet.png");
         public static Bitmap BigCommetSprite = (Bitmap)Image.FromFile("img\\BigComet.png");
+        public static Bitmap BrokenBigCommetSprite = (Bitmap)Image.FromFile("img\\BrokenBigComet.png");
         public static Bitmap BulletSprite = (Bitmap) Image.FromFile("img\\Bullet.png");
         public static Bitmap PlayerSprite1 = (Bitmap) Image.FromFile("img\\Player1.png");
         public static Bitmap PlayerSprite2 = (Bitmap)Image.FromFile("img\\Player2.png");
@@ -50,10 +51,10 @@ namespace hackaton
             switch (r.Next(0, 100) % 2)
             {
                 case 0:
-                    gameObjects.AddLast(new Commet(new Point(xRandom, -150)));
+                    gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
                     break;
                 case 1:
-                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -150)));
+                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
                     break;
             }
         }
@@ -70,8 +71,6 @@ namespace hackaton
                 {
                     forClering.Add(gameObject);
                     hero.Heals -= gameObject.Damage;
-                    //if (hero.Heals <= 0)
-                    //    GameOver();
                 }
                 if (!(gameObject is Bullet))
                 {
