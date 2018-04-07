@@ -33,7 +33,7 @@ namespace hackaton
                         var y = location.Y + j;
                         if (x > 0 & y > 0 & x < width & y < heigth)
                             result.SetPixel(x, y, obj.Sprite.GetPixel(i, j));
-                    }                
+                    }
             }
             return result;
         }
@@ -44,7 +44,5 @@ namespace hackaton
                 obj.Position.X - obj.Sprite.Width / 2,
                 obj.Position.Y - obj.Sprite.Height / 2);
         }
-
-        private void SpriteImposition(Bitmap result, )
     }
 }
