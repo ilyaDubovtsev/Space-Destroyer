@@ -9,9 +9,9 @@ namespace hackaton
 {
     class Bullet : IGameObject
     {
-        public Bitmap Sprite => (Bitmap) Image.FromFile("img\\Bullet.png");
+        public Bitmap Sprite => Game.BulletSprite;
         public Point Position { get; private set; }
-        public int Priority { get; }
+        public int Priority => 99;
         public int HitboxRadius => 1;
         public int Speed => -10;
         public int Heals

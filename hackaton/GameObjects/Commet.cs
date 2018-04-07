@@ -9,7 +9,8 @@ namespace hackaton
 {
     class Commet : IGameObject
     {
-        public Bitmap Sprite { get; }
+        //private static Bitmap _sprite = (Bitmap) Image.FromFile("img\\Commet.png");
+        public Bitmap Sprite => Game.CommetSprite;
         public Point Position { get; private set; }
         public int Priority => 3;
         public int HitboxRadius { get; }
@@ -22,9 +23,8 @@ namespace hackaton
             Position = new Point(Position.X, Position.Y + Speed);
         }
 
-        public Commet(Bitmap sprite, Point startPosition)
+        public Commet(Point startPosition)
         {
-            this.Sprite = sprite;
             this.Position = startPosition;
             this.HitboxRadius = 28;
             this.Heals = 20;

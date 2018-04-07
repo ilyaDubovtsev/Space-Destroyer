@@ -10,16 +10,30 @@ namespace hackaton
 {
     public static class Game
     {
+        public static Bitmap CommetSprite = (Bitmap) Image.FromFile("img\\Commet.png");
+        public static Bitmap BigCommetSprite = (Bitmap)Image.FromFile("img\\BigCommet.png");
+        public static Bitmap PlanetSprite = (Bitmap)Image.FromFile("img\\Planet.png");
+        public static Bitmap BulletSprite = (Bitmap) Image.FromFile("img\\Bullet.png");
         public static Bitmap BackGround;
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
-        public static int GameCounter = 0; //TODO: дописать добавление обжэкта по каунтеру
+        public static LinkedList<IGameObject> Bullets;
+
+        public static int GameCounter = 0; 
 
         public static void Start()
         {
             BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
             hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
             gameObjects = new LinkedList<IGameObject>();
+            Bullets = new LinkedList<IGameObject>();
+        }
+
+        public static void AddBullet()
+        {
+            var bullet = new Bullet(hero.Position);
+            Bullets.AddLast(bullet);
+            gameObjects.AddLast(bullet);
         }
 
         public static void AddObject()
@@ -29,17 +43,14 @@ namespace hackaton
             switch (r.Next(0, 100) % 3)
             {
                 case 0:
-                    gameObjects.AddLast(new Commet((Bitmap)Image.FromFile("img\\Commet.png"), 
-                        new Point(xRandom, -150)));
+                    gameObjects.AddLast(new Commet(new Point(xRandom, -150)));
                     break;
                 case 1:
-                    gameObjects.AddLast(new BigCommet((Bitmap)Image.FromFile("img\\Commet.png"), 
-                        new Point(xRandom, -150)));
+                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -150)));
                     break;
-                case 2:
-                    gameObjects.AddLast(new Planet((Bitmap)Image.FromFile("img\\Commet.png"), 
-                        new Point(r.Next(0, 1) == 1 ? 0 : 400, -150)));
-                    break;
+                //case 2:
+                //    gameObjects.AddLast(new Planet(new Point(r.Next(0, 1) == 1 ? 0 : 400, -150)));
+                //    break;
             }
         }
 
@@ -80,6 +91,7 @@ namespace hackaton
 
         private static bool IsBumpToHero(IGameObject ob)
         {
+            if (ob is Bullet) return false;
             var deltaX = hero.Position.X - ob.Position.X;
             var deltaY = hero.Position.Y - ob.Position.Y;
             var distance = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);

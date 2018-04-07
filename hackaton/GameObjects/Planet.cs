@@ -9,7 +9,8 @@ namespace hackaton
 {
     class Planet : IGameObject
     {
-        public Bitmap Sprite { get; }
+        //private static Bitmap _sprite = (Bitmap) Image.FromFile("img\\Commet.png");
+        public Bitmap Sprite => Game.PlanetSprite;
         public Point Position { get; private set; }
         public int Priority => 1;
         public int HitboxRadius { get; }
@@ -25,9 +26,8 @@ namespace hackaton
             Position = new Point(Position.X, Position.Y + Speed);
         }
 
-        public Planet(Bitmap sprite, Point startPosition)
+        public Planet(Point startPosition)
         {
-            this.Sprite = sprite;
             this.Position = startPosition;
             this.HitboxRadius = 32;
         }

@@ -34,12 +34,13 @@ namespace hackaton
                 delta -= delta / Math.Abs(delta);
             Game.Update();
             Game.GameCounter++;
-            if (Game.GameCounter == 30)
+            if (Game.GameCounter == 50)
             {
                 Game.GameCounter = 0;
                 Game.AddObject();
             }
-            //Game.AddObject();
+            if (Game.GameCounter % 5 == 0)
+                Game.AddBullet();
             Game.hero.Move(delta);
             pictureBox1.Image = painter.Paint(Game.ReturnAllObjects());
         }

@@ -9,7 +9,8 @@ namespace hackaton
 {
     class BigCommet : IGameObject
     {
-        public Bitmap Sprite { get; }
+        //private static Bitmap _sprite = (Bitmap) Image.FromFile("img\\Commet.png");
+        public Bitmap Sprite => Game.BigCommetSprite;
         public Point Position { get; private set; }
         public int Priority => 2;
         public int HitboxRadius { get; }
@@ -22,9 +23,8 @@ namespace hackaton
             Position = new Point(Position.X, Position.Y + Speed);
         }
 
-        public BigCommet(Bitmap sprite, Point startPosition)
+        public BigCommet(Point startPosition)
         {
-            this.Sprite = sprite;
             this.Position = startPosition;
             this.HitboxRadius = 32;
             this.Heals = 30;
