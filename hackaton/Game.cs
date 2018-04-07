@@ -25,6 +25,8 @@ namespace hackaton
         public static LinkedList<Bullet> Bullets;
         public static int Score;
 
+        static SoundPlayer hit = new SoundPlayer("Sound.wav");
+
         public static Timer timer;
 
         static SoundPlayer hitSound = new SoundPlayer("sound\\Hit.wav");
