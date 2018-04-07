@@ -21,7 +21,7 @@ namespace hackaton
             this.background = background;
         }
 
-        public Bitmap Paint(IEnumerable<IGameObject> objects, Hero hero)
+        public Bitmap Paint(IEnumerable<IGameObject> objects)
         {
             result = new Bitmap(background);
             foreach (var obj in objects.OrderBy(x => x.Priority))
@@ -44,23 +44,6 @@ namespace hackaton
                         }
                     }
             }
-            var loc = PositionTransformer(hero);
-            for (int i = 0; i < hero.Sprite.Width; i++)
-                for (int j = 0; j < hero.Sprite.Height; j++)
-                {
-                    var x = loc.X + i;
-                    var y = loc.Y + j;
-                    if (x > 0 & y > 0 & x < width & y < heigth)
-                    {
-                        var newPixel = hero.Sprite.GetPixel(i, j);
-                        var oldPixel = result.GetPixel(x, y);
-                        int resR = (int)(newPixel.A * newPixel.R + oldPixel.R * (255 - newPixel.A)) / 255;
-                        int resG = (int)(newPixel.A * newPixel.G + oldPixel.G * (255 - newPixel.A)) / 255;
-                        int resB = (int)(newPixel.A * newPixel.B + oldPixel.B * (255 - newPixel.A)) / 255;
-                        var resultPixel = Color.FromArgb(255, resR, resG, resB);
-                        result.SetPixel(x, y, resultPixel);
-                    }
-                }
             return result;
         }
 

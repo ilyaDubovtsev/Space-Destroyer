@@ -32,7 +32,12 @@ namespace hackaton
 
         public void Move(int delta)
         {
-            Position = new Point(Position.X + delta, Position.Y);
+            int newX = Position.X+delta;
+            if (newX < 0)
+                newX = 0;
+            if (newX > 400)
+                newX = 400;
+            Position = new Point(newX, Position.Y);
         }
     }
 }

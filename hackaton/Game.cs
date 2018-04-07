@@ -17,7 +17,11 @@ namespace hackaton
         public static void Start()
         {
            BackGround = (Bitmap) Image.FromFile("img\\Background.bmp");
+<<<<<<< HEAD
             hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 500));
+=======
+            hero = new Hero((Bitmap) Image.FromFile("img\\Hero.png"), new Point(200, 530), 50);
+>>>>>>> 36ac07349bec81d909d44648deeafaf3a8df64e3
             gameObjects = new LinkedList<IGameObject>();
         }
 
@@ -49,6 +53,13 @@ namespace hackaton
                 gameObject.SetNewPosition();
                 PositionCheck(gameObject);
             }
+        }
+
+        public static IEnumerable<IGameObject> ReturnAllObjects()
+        {
+            var result = gameObjects.ToList();
+            result.Add(hero);
+            return result;
         }
 
         private static void PositionCheck(IGameObject gameObject)
