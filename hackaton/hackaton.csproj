@@ -55,6 +55,7 @@
     <Compile Include="GameObjects\BigCommet.cs" />
     <Compile Include="GameObjects\Bullet.cs" />
     <Compile Include="GameObjects\Commet.cs" />
+    <Compile Include="GameObjects\Healer.cs" />
     <Compile Include="GameObjects\Hero.cs" />
     <Compile Include="GameObjects\IGameObject.cs" />
     <Compile Include="Painter.cs" />

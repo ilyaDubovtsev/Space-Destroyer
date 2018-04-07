@@ -18,7 +18,7 @@ namespace hackaton
         public static Bitmap PlayerSprite1 = (Bitmap) Image.FromFile("img\\Player1.png");
         public static Bitmap PlayerSprite2 = (Bitmap)Image.FromFile("img\\Player2.png");
         public static Bitmap PlayerSprite3 = (Bitmap)Image.FromFile("img\\Player3.png");
-
+        public static Bitmap HealerSprite = (Bitmap)Image.FromFile("img\\healUp.png");
         public static Bitmap BackGround;
         public static Hero hero;
         public static LinkedList<IGameObject> gameObjects;
@@ -55,7 +55,7 @@ namespace hackaton
         public static void AddObject()
         {
             var xRandom = r.Next(0, 400);
-            switch (r.Next() % 3)
+            switch (r.Next() % 7)
             {
                 case 0:
                     gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
@@ -64,6 +64,18 @@ namespace hackaton
                     gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
                     break;
                 case 2:
+                    gameObjects.AddLast(new Healer(new Point(xRandom, -50)));
+                    break;
+                case 3:
+                    gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
+                    break;
+                case 4:
+                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
+                    break;
+                case 5:
+                    gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
+                    break;
+                case 6:
                     gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
                     break;
             }
