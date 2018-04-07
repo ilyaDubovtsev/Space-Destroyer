@@ -21,7 +21,7 @@ namespace hackaton
         private void timer1_Tick(object sender, EventArgs e)
         {
             Game.Update();
-            pictureBox1.Image = painter.Paint(Game.ReturnAllObjects());
+            pictureBox1.Image = painter.Paint(Game.gameObjects, Game.hero);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,9 +33,9 @@ namespace hackaton
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
-                Game.hero.Move(-3);
+                Game.hero.Move(-5);
             if (e.KeyCode == Keys.Right)
-                Game.hero.Move(3);
+                Game.hero.Move(5);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace hackaton
     {
         public static Bitmap BackGround;
         public static Hero hero;
-        static LinkedList<IGameObject> gameObjects;
+        public static LinkedList<IGameObject> gameObjects;
 
         public static void Start()
         {
@@ -38,13 +38,6 @@ namespace hackaton
         private static void PositionCheck(IGameObject gameObject)
         {
             if (gameObject.Position.Y > 650) gameObjects.Remove(gameObject);
-        }
-
-        public static IEnumerable<IGameObject> ReturnAllObjects()
-        {
-            var result = gameObjects.ToList();
-            result.Add(hero);
-            return result;
-        }
+        }        
     }
 }
