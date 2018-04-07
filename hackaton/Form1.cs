@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace hackaton
 {
     public partial class Form1 : Form
     {
+        SoundPlayer music = new SoundPlayer("Sound.wav");
         bool left;
         bool right;
         int delta = 0;
@@ -37,6 +39,7 @@ namespace hackaton
         private void Form1_Load(object sender, EventArgs e)
         {
             Game.Start();
+            music.PlayLooping();
             painter = new Painter(pictureBox1, Game.BackGround);
         }
 
