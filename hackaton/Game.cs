@@ -17,10 +17,17 @@ namespace hackaton
         {
             BackGround = (Bitmap) Image.FromFile("\\assets\\img\\Hero.png");
             hero = new Hero((Bitmap) Image.FromFile("\\assets\\img\\Background.bmp"), new Point(200, 500), 50);
+            gameObjects = new LinkedList<IGameObject>();
+        }
+
+        public static void AddObject<T>()
+        {
+            throw new NotImplementedException();
         }
 
         public static void Update()
         {
+
             foreach (var gameObject in gameObjects)
             {
                 gameObject.SetNewPosition();
