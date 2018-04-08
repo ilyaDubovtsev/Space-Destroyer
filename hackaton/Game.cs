@@ -53,30 +53,36 @@ namespace hackaton
         public static void AddObject()
         {
             var xRandom = r.Next(0, 400);
-            switch (r.Next() % 7)
-            {
-                case 0:
-                    gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
-                    break;
-                case 1:
-                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
-                    break;
-                case 2:
-                    gameObjects.AddLast(new Healer(new Point(xRandom, -50)));
-                    break;
-                case 3:
-                    gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
-                    break;
-                case 4:
-                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
-                    break;
-                case 5:
-                    gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
-                    break;
-                case 6:
-                    gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
-                    break;
-            }
+            if (xRandom % 49 == 0)
+                gameObjects.AddLast(new Healer(new Point(xRandom, -50)));
+            else if (xRandom % 2 == 0)
+                gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
+            else
+                gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
+            //switch (r.Next() % 7)
+            //{
+            //    case 0:
+            //        gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
+            //        break;
+            //    case 1:
+            //        gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
+            //        break;
+            //    case 2:
+            //        gameObjects.AddLast(new Healer(new Point(xRandom, -50)));
+            //        break;
+            //    case 3:
+            //        gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
+            //        break;
+            //    case 4:
+            //        gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
+            //        break;
+            //    case 5:
+            //        gameObjects.AddLast(new Commet(new Point(xRandom, -50)));
+            //        break;
+            //    case 6:
+            //        gameObjects.AddLast(new BigCommet(new Point(xRandom, -50)));
+            //        break;
+            //}
         }
 
         public static void Update()
