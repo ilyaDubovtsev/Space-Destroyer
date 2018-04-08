@@ -55,23 +55,28 @@ namespace hackaton
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
                 left = false;
-            if (e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
                 right = false; 
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.A)
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
                 left = true;
-            if (e.KeyCode == Keys.D)
+            if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
                 right = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Game.Start();
+        }
+
+        private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            e.IsInputKey = true;
         }
     }
 }
