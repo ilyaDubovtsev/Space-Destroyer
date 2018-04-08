@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Heals = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.TopScoreLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             // 
             // Score
             // 
-            this.Score.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Score.Font = new System.Drawing.Font("Magneto", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Score.ForeColor = System.Drawing.Color.White;
             this.Score.Location = new System.Drawing.Point(517, 231);
             this.Score.Name = "Score";
@@ -114,7 +116,7 @@
             // 
             // Heals
             // 
-            this.Heals.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Heals.Font = new System.Drawing.Font("Magneto", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Heals.ForeColor = System.Drawing.Color.White;
             this.Heals.Location = new System.Drawing.Point(504, 158);
             this.Heals.Name = "Heals";
@@ -139,12 +141,39 @@
             this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.button1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             // 
+            // TopScoreLabel
+            // 
+            this.TopScoreLabel.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.TopScoreLabel.Font = new System.Drawing.Font("Magneto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TopScoreLabel.ForeColor = System.Drawing.Color.White;
+            this.TopScoreLabel.Location = new System.Drawing.Point(428, 330);
+            this.TopScoreLabel.Name = "TopScoreLabel";
+            this.TopScoreLabel.Padding = new System.Windows.Forms.Padding(25, 60, 25, 0);
+            this.TopScoreLabel.Size = new System.Drawing.Size(207, 157);
+            this.TopScoreLabel.TabIndex = 8;
+            this.TopScoreLabel.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.GhostWhite;
+            this.label6.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Location = new System.Drawing.Point(428, 330);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(207, 41);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Best Scores";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(647, 624);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TopScoreLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Heals);
@@ -158,7 +187,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "The Space Destruyer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -179,6 +208,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Heals;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label TopScoreLabel;
+        private System.Windows.Forms.Label label6;
     }
 }
 

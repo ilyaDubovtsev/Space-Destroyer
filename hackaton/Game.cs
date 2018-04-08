@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using System.Media;
 
@@ -25,11 +26,8 @@ namespace hackaton
         public static LinkedList<Bullet> Bullets;
         public static int Score;
         private static Random r = new Random();
-
         static SoundPlayer hit = new SoundPlayer("Sound.wav");
-
         public static Timer timer;
-
         static SoundPlayer hitSound = new SoundPlayer("sound\\Hit.wav");
         static SoundPlayer crushSound = new SoundPlayer("sound\\Crush.wav");
         public static SoundPlayer music = new SoundPlayer("sound\\Music.wav");
@@ -153,9 +151,35 @@ namespace hackaton
 
         public static void GameOver()
         {
-            gameObjects = new LinkedList<IGameObject>();
-            hero = new Hero((Bitmap)Image.FromFile("img\\GameOver.png"), new Point(200, 300));
             timer.Stop();
+            gameObjects = new LinkedList<IGameObject>();
+            SetNewHeightScore();
+            hero = new Hero((Bitmap)Image.FromFile("img\\GameOver.png"), new Point(200, 300));
+        }
+
+        public static void SetNewHeightScore()
+        {
+            var scores = LoadOldHeightScore();
+            var newScore = Score;
+            var builder = new StringBuilder();
+            for (int i = 0; i < 3; i++)
+            {
+                if (scores[i] < newScore)
+                {
+                    var tmp = scores[i];
+                    scores[i] = newScore;
+                    newScore = tmp;
+                }
+                    builder.Append(scores[i]);
+                    builder.Append('\n');
+            }
+            File.WriteAllText("heightScores.txt", builder.ToString());
+        }
+
+        public static List<int> LoadOldHeightScore()
+        {
+            var lines = File.ReadAllLines("heightScores.txt");
+            return lines.Select(int.Parse).ToList();
         }
     }
 }

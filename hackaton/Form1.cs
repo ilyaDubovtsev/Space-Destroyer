@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Media;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace hackaton
@@ -51,6 +52,17 @@ namespace hackaton
             Task.Run(() => Game.music.PlayLooping());
             painter = new Painter(pictureBox1, Game.BackGround);
             Heals.Text = Game.hero.Heals.ToString();
+            var builder = new StringBuilder();
+            int index = 1;
+            foreach (var value in Game.LoadOldHeightScore())
+            {
+                builder.Append(index);
+                builder.Append(".  ");
+                builder.Append(value);
+                builder.Append('\n');
+                index++;
+            }
+            TopScoreLabel.Text = builder.ToString();
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -72,6 +84,18 @@ namespace hackaton
         private void button1_Click(object sender, EventArgs e)
         {
             Game.Start();
+            var builder = new StringBuilder();
+            int index = 1;
+            foreach (var value in Game.LoadOldHeightScore())
+            {
+                builder.Append(index);
+                builder.Append(".  ");
+                builder.Append(value);
+                builder.Append('\n');
+                index++;
+            }
+            builder.Remove(builder.Length - 1, 1);
+            TopScoreLabel.Text = builder.ToString();
         }
     }
 }
