@@ -13,9 +13,9 @@ namespace hackaton
         public Point Position { get; private set; }
         public int Priority => 2;
         public int HitboxRadius { get; }
-        public int Speed => 4;
+        public int Speed => 15;
         public int Heals { get; set; }
-        public int Damage  => 20;
+        public int Damage  => 15;
 
         public void SetNewPosition()
         {
@@ -26,7 +26,7 @@ namespace hackaton
         {
             this.Position = startPosition;
             this.HitboxRadius = 14;
-            this.Heals = 50;
+            this.Heals = 40;
         }
     }
 }

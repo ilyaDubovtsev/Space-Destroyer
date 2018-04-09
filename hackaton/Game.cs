@@ -45,9 +45,21 @@ namespace hackaton
         }
         public static void AddBullet()
         {
-            var bullet = new Bullet(hero.Position);
-            Bullets.AddLast(bullet);
-            gameObjects.AddLast(bullet);
+            
+            var bullet2 = new Bullet(new Point(hero.Position.X - 15, hero.Position.Y - 20));
+            var bullet3 = new Bullet(new Point(hero.Position.X + 15, hero.Position.Y - 20));
+            var bullet4 = new Bullet(new Point(hero.Position.X - 8, hero.Position.Y - 16));
+            var bullet5 = new Bullet(new Point(hero.Position.X + 8, hero.Position.Y - 16));
+            
+            Bullets.AddLast(bullet2);
+            Bullets.AddLast(bullet3);
+            Bullets.AddLast(bullet4);
+            Bullets.AddLast(bullet5);
+            
+            gameObjects.AddLast(bullet2);
+            gameObjects.AddLast(bullet3);
+            gameObjects.AddLast(bullet4);
+            gameObjects.AddLast(bullet5);
         }
 
         public static void AddObject()

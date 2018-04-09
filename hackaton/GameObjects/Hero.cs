@@ -34,8 +34,8 @@ namespace hackaton
             int newX = Position.X+delta;
             if (newX < 0)
                 newX = 0;
-            if (newX > 400)
-                newX = 400;
+            if (newX > 600)
+                newX = 600;
             Position = new Point(newX, Position.Y);
         }
 

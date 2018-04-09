@@ -13,14 +13,14 @@ namespace hackaton
         public Point Position { get; private set; }
         public int Priority => 99;
         public int HitboxRadius => 1;
-        public int Speed => -10;
+        public int Speed => -20;
         public int Heals
         {
-            get => 100;
+            get { return 100; }
             set {}
         }
 
-        public int Damage => 7;
+        public int Damage => 10;
 
         public void SetNewPosition()
         {
