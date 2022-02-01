@@ -35,23 +35,23 @@ namespace hackaton
 
             if (Game.GameCounter % 5 == 0)
             {
-                Game.hero.ChangeSprite();
+                Game.Hero.ChangeSprite();
                 Game.AddBullet();
             }
-            Game.hero.Move(delta);
+            Game.Hero.Move(delta);
             pictureBox1.Image = painter.Paint(Game.ReturnAllObjects());
             Score.Text = Game.Score.ToString();
-            Heals.Text = Game.hero.Heals.ToString();
+            Heals.Text = Game.Hero.Heals.ToString();
             
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Game.timer = timer1;
+            Game.Timer = timer1;
             Game.Start();
             Task.Run(() => Game.music.PlayLooping());
             painter = new Painter(pictureBox1, Game.BackGround);
-            Heals.Text = Game.hero.Heals.ToString();
+            Heals.Text = Game.Hero.Heals.ToString();
             var builder = new StringBuilder();
             int index = 1;
             foreach (var value in Game.LoadOldHeightScore())

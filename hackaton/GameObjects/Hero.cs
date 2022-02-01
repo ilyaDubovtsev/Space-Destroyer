@@ -23,15 +23,15 @@ namespace hackaton
 
         public Hero(Bitmap sprite, Point startPosition)
         {
-            this.Sprite = sprite;
-            this.Position = startPosition;
-            this.HitboxRadius = 32;
-            this.Heals = 100;
+            Sprite = sprite;
+            Position = startPosition;
+            HitboxRadius = 32;
+            Heals = 100;
         }
 
         public void Move(int delta)
         {
-            int newX = Position.X+delta;
+            var newX = Position.X+delta;
             if (newX < 0)
                 newX = 0;
             if (newX > 600)

@@ -16,7 +16,7 @@ namespace hackaton
         public int Speed => -20;
         public int Heals
         {
-            get { return 100; }
+            get => 100;
             set {}
         }
 
@@ -29,7 +29,7 @@ namespace hackaton
 
         public Bullet(Point startPosition)
         {
-            this.Position = startPosition;
+            Position = startPosition;
         }
     }
 }

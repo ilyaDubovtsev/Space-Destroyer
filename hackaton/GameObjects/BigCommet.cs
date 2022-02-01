@@ -9,7 +9,7 @@ namespace hackaton
 {
     public class BigCommet : IGameObject
     {
-        public Bitmap Sprite => Game.BigCommetSprite;
+        public Bitmap Sprite => Game.BigCometSprite;
         public Point Position { get; private set; }
         public int Priority => 2;
         public int HitboxRadius { get; }
